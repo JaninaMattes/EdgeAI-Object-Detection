@@ -18,13 +18,13 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-<div align="center">
-  [![Contributors][contributors-shield]][contributors-url]
-  [![Forks][forks-shield]][forks-url]
-  [![Stargazers][stars-shield]][stars-url]
-  [![Issues][issues-shield]][issues-url]
-  [![Unlicense License][license-shield]][license-url]
-</div>
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![Unlicense License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
 
 <!-- PROJECT LOGO -->
 <br />
@@ -110,27 +110,50 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ### Installation
 
-
+1. Clone the repo
+   ```
+    git clone [https://github.com/JaninaMattes/EdgeAI-Object-Detection.git](https://github.com/JaninaMattes/EdgeAI-Object-Detection.git)
+   ```
+2. Backend setup
+   ```
+    cd backend
+    uv sync
+    uv run uvicorn app.main:app --reload
+   ```
+3. Frontend Setup
+   * Open ```ios-app/EdgeAI.xcodeproj``` in Xcode.
+   * Update the BackendConfig.swift with your machine's local IP address.
+   * Build and run on your physical iPhone.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+### Usage 
+2. Live Telemetry
+The iOS app will automatically detect the new model via WebSockets and start a live benchmarking session, displaying:
+
+* Inference Latency (ms)
+* Thermal State (Nominal -> Critical)
+* IoU Drift (Comparison between Teacher and Student models)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [x] Initial Project Structure & uv setup
+- [x] Add FastAPI WebSocket Telemetry Hub
+- [ ] Basic YOLOv8 to CoreML Export Pipeline
+- [ ] iOS Vision Framework Implementation
+- [ ] Pruning Engine (L1 Unstructured)
+- [ ] Knowledge Distillation Trainer
+- [ ] Live Dashboard Overlay in SwiftUI
+  
 
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 
@@ -148,6 +171,8 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- LICENSE -->
@@ -219,3 +244,15 @@ Use this space to list resources you find helpful and would like to give credit 
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
+[Python-badge]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
+[Python-url]: https://www.python.org/
+[FastAPI-badge]: https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white
+[FastAPI-url]: https://fastapi.tiangolo.com/
+[PyTorch-badge]: https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white
+[PyTorch-url]: https://pytorch.org/
+[Swift-badge]: https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white
+[Swift-url]: https://developer.apple.com/swift/
+[Docker-badge]: https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white
+[Docker-url]: https://www.docker.com/
+[UV-badge]: https://img.shields.io/badge/UV-000000?style=for-the-badge&logo=astral&logoColor=white
+[UV-url]: https://astral.sh/uv
