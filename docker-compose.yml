@@ -1,0 +1,11 @@
+services:
+  api:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/exports:/app/exports
+    deploy:
+      resources:
+        limits:
+          memory: 4G  # Essential for model conversion
